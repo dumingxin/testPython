@@ -27,3 +27,34 @@ print(sum)
 ls = ['a', 'b', 'c']
 for x in ls:
     print('hello %s' % x)
+
+
+def my_abs(n):
+    if n > 0:
+        return n
+    else:
+        return -n
+
+
+print(my_abs(-10))
+
+L1 = ['Hello', 'World', 18, 'Apple', None]
+L2 = [s for s in L1 if isinstance(s, str)]
+print(L2)
+
+
+def triangles():
+    L = [1]
+    while(True):
+        yield L
+        L = [L[x] + L[x + 1] for x in range(len(L) - 1)]
+        L.insert(0, 1)
+        L.append(1)
+
+
+n = 0
+for t in triangles():
+    print(t)
+    n = n + 1
+    if n == 10:
+        break
